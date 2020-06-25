@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="https://www.brighterdan.com/en/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.brighterdan.com/en/" rel="alternate" type="text/html" hreflang="en" /><updated>2020-06-26T08:32:13+01:00</updated><id>https://www.brighterdan.com/en/feed.xml</id><title type="html">Daniel Santos</title><entry><title type="html">Knowledging</title><link href="https://www.brighterdan.com/en/2020/06/18/knowledging/" rel="alternate" type="text/html" title="Knowledging" /><published>2020-06-18T00:00:00+01:00</published><updated>2020-06-19T12:47:56+01:00</updated><id>https://www.brighterdan.com/en/2020/06/18/knowledging</id><content type="html" xml:base="https://www.brighterdan.com/en/2020/06/18/knowledging/">&lt;p&gt;With Enlightment and it’s notion, came the Knowledge and it’s culture.&lt;/p&gt;
+
+&lt;p&gt;Knowledge is the honouring of a grasping mind :wink:&lt;/p&gt;</content><author><name></name></author><summary type="html">With Enlightment and it’s notion, came the Knowledge and it’s culture. Knowledge is the honouring of a grasping mind :wink:</summary></entry><entry><title type="html">Remove default dictionary from Sublime Text</title><link href="https://www.brighterdan.com/en/linux/2019/12/20/sublime-text-remove-default-dictionary/" rel="alternate" type="text/html" title="Remove default dictionary from Sublime Text" /><published>2019-12-20T00:00:00+00:00</published><updated>2020-02-23T08:57:47+00:00</updated><id>https://www.brighterdan.com/en/linux/2019/12/20/sublime-text-remove-default-dictionary</id><content type="html" xml:base="https://www.brighterdan.com/en/linux/2019/12/20/sublime-text-remove-default-dictionary/">&lt;h1 id=&quot;intro&quot;&gt;Intro&lt;/h1&gt;
+
+&lt;p&gt;This post is useful if you want to add custom dictionaries to your Sublime Text spell checking.&lt;/p&gt;
+
+&lt;!-- stop --&gt;
+
+&lt;h2 id=&quot;remove-default-dictionary&quot;&gt;Remove default dictionary&lt;/h2&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;rm&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;/opt/sublime_text/Packages/Language - English.sublime-package&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;add-dictionaries-from-the-system-from-hunspell&quot;&gt;Add dictionaries from the system (from hunspell)&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;create a Sublime Text dictionary folder&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nb&quot;&gt;mkdir&lt;/span&gt; ~/.config/sublime-text-3/Packages/Dictionaries/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;add &lt;em&gt;hunspell&lt;/em&gt;’s dictionary to this folder&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;c&quot;&gt;# Portuguese&lt;/span&gt;
+ &lt;span class=&quot;nb&quot;&gt;ln&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; /usr/share/hunspell/pt_PT.dic ~/.config/sublime-text-3/Packages/Dictionaries/pt_PT.dic
+ &lt;span class=&quot;nb&quot;&gt;ln&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; /usr/share/hunspell/pt_PT.aff ~/.config/sublime-text-3/Packages/Dictionaries/pt_PT.aff
+ &lt;span class=&quot;c&quot;&gt;# English&lt;/span&gt;
+ &lt;span class=&quot;nb&quot;&gt;ln&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; /usr/share/hunspell/en_GB.dic ~/.config/sublime-text-3/Packages/Dictionaries/en_GB.dic
+ &lt;span class=&quot;nb&quot;&gt;ln&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; /usr/share/hunspell/en_GB.aff ~/.config/sublime-text-3/Packages/Dictionaries/en_GB.aff
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;add a predefined dictionary to Sublime.&lt;br /&gt;
+ Go to &lt;code class=&quot;highlighter-rouge&quot;&gt;Preferences &amp;gt; Settings&lt;/code&gt; and add the line&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &quot;dictionary&quot;: &quot;Packages/Dictionaries/pt_PT.dic&quot;,
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Done!&lt;/p&gt;
+
+&lt;p&gt;Now, all the above dictionaries are in Sublime’s Spell Checker (&lt;code class=&quot;highlighter-rouge&quot;&gt;View &amp;gt; Dictionary&lt;/code&gt;).&lt;/p&gt;</content><author><name></name></author><summary type="html">Intro This post is useful if you want to add custom dictionaries to your Sublime Text spell checking.</summary></entry><entry><title type="html">Learn great Firefox search skills</title><link href="https://www.brighterdan.com/en/2019/12/14/firefox-search-engines/" rel="alternate" type="text/html" title="Learn great Firefox search skills" /><published>2019-12-14T00:00:00+00:00</published><updated>2020-05-29T10:42:24+01:00</updated><id>https://www.brighterdan.com/en/2019/12/14/firefox-search-engines</id><content type="html" xml:base="https://www.brighterdan.com/en/2019/12/14/firefox-search-engines/">&lt;!-- stop --&gt;
+&lt;div class=&quot;mx-lg-5 mb-3 text-center embed-responsive embed-responsive-16by9&quot;&gt;
+	&lt;iframe width=&quot;560&quot; height=&quot;315&quot; sandbox=&quot;allow-scripts&quot; src=&quot;https://p.eertu.be/videos/embed/229577ce-984d-40f2-9bff-5f123ccde0a3?warningTitle=0&quot; allowfullscreen=&quot;&quot; style=&quot;border: 0px;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;</content><author><name></name></author><summary type="html"></summary></entry><entry><title type="html">I have a warning</title><link href="https://www.brighterdan.com/en/2019/11/06/upcoming-event/" rel="alternate" type="text/html" title="I have a warning" /><published>2019-11-06T00:00:00+00:00</published><updated>2020-02-23T08:57:47+00:00</updated><id>https://www.brighterdan.com/en/2019/11/06/upcoming-event</id><content type="html" xml:base="https://www.brighterdan.com/en/2019/11/06/upcoming-event/">&lt;p&gt;Being circuncised led me to experiences, what is believed by me to be outter world.&lt;/p&gt;
+
+&lt;p&gt;I will be writing this experiences also in English, from now on. I have writted in past time on the Portuguese language only.&lt;/p&gt;
+
+&lt;!-- stop --&gt;
+
+&lt;p&gt;An war is comming.&lt;/p&gt;
+
+&lt;p&gt;I’m not talking an battle on Earth, but on the spiritual plane.&lt;/p&gt;
+
+&lt;p&gt;I do not know if is the first War, that is referenced in the Bhagavad Gita, or if is the second.&lt;/p&gt;
+
+&lt;p&gt;Some weapons are being removed by the what-we-know-as-God side, which is very different from the God (or Father) of Jesus. The what-we-know-as-God God’s is not loving at all.&lt;/p&gt;
+
+&lt;p&gt;I do know that I am inside the illusion world (I believe is called Maya) and connected to a machine, which purpose I believe is to drain my soul essence, in order to fuel this battle. I do not believe I’m the only one being drained. In fact, would be an easy battle.
+In fact, since the “I” has been record as having 2 sides - the true one and the illuded one - I believe this draning has been going towards humans.&lt;/p&gt;
+
+&lt;p&gt;This draining event is related to why you lose your memory so quickly, why you are so low energy sometimes, why you know there is too much control in this world. Why you blink in fear.&lt;/p&gt;
+
+&lt;p&gt;To me, Fear and Control are related. Only in a controlled world there is fear.&lt;/p&gt;
+
+&lt;p&gt;My perception, dreams, thoughts are controlled. My mind is connect to a (draining) machine.&lt;/p&gt;
+
+&lt;p&gt;The &lt;em&gt;God soldiers/people/gate keepers&lt;/em&gt; want to arrest free people and spiritual entities.&lt;/p&gt;
+
+&lt;p&gt;They God for some and not all.&lt;/p&gt;</content><author><name></name></author><summary type="html">Being circuncised led me to experiences, what is believed by me to be outter world. I will be writing this experiences also in English, from now on. I have writted in past time on the Portuguese language only.</summary></entry><entry><title type="html">My English Blog</title><link href="https://www.brighterdan.com/en/2018/01/31/english-blog/" rel="alternate" type="text/html" title="My English Blog" /><published>2018-01-31T00:00:00+00:00</published><updated>2020-02-23T08:57:47+00:00</updated><id>https://www.brighterdan.com/en/2018/01/31/english-blog</id><content type="html" xml:base="https://www.brighterdan.com/en/2018/01/31/english-blog/">&lt;p&gt;Currently I’m not planning writing my blog in English. So to read my posts please go to &lt;a href=&quot;/blog/&quot;&gt;my Blog in Portuguese&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><summary type="html">Currently I’m not planning writing my blog in English. So to read my posts please go to my Blog in Portuguese.</summary></entry></feed>
